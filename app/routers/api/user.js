@@ -59,6 +59,6 @@ router
     //  * @return {ApiError} 400 - Bad request response - application/json
     //  * @return {ApiError} 404 - User not found - application/json
      */
-  .delete( controllerHandler(userController.deleteOneByPk));
+  .delete(controllerHandler(userController.deleteOneByPk));
 
 module.exports = router;

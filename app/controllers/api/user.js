@@ -16,12 +16,12 @@ module.exports = {
   async createOne(req, res) {
     debug('dans createOne');
     return res.status(200).json({
-        user: {
-          id: 'information in req.body',
-          email: req.body.email,
-          pseudonym: req.body.pseudonym,
-        },
-      });
+      user: {
+        id: 'information in req.body',
+        email: req.body.email,
+        pseudonym: req.body.pseudonym,
+      },
+    });
 
     // debug('req.body.email ', req.body.email);
     // // look if a user already exits with this email

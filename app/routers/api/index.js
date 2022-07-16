@@ -17,7 +17,6 @@ router.use((_, res, next) => {
 // router.use('/signin', signinRouter);
 router.use('/users', userRouter);
 
-
 router.use(() => {
   debug('route not found');
   throw new ApiError('API Route not found', { statusCode: 404 });
