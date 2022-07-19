@@ -3,6 +3,7 @@ const debug = require('debug')('router index');
 const verifyToken = require('../../helpers/verifyToken');
 
 const userRouter = require('./user');
+const signinRouter = require('./signin');
 
 const { ApiError } = require('../../helpers/errorHandler');
 
@@ -14,7 +15,7 @@ router.use((_, res, next) => {
 });
 
 // On préfixe les routers de l'API
-// router.use('/signin', signinRouter);
+router.use('/signin', signinRouter);
 router.use('/users', userRouter);
 
 router.use(() => {

@@ -3,8 +3,8 @@ const expressJSDocSwagger = require('express-jsdoc-swagger');
 const options = {
   info: {
     version: '1.0.0',
-    title: 'C du Props',
-    description: 'application ménage ludique',
+    title: 'yoga-redux',
+    description: 'yoga redux back avec bdd pg',
   },
   baseDir: __dirname,
   // On analyse tous les fichiers du projet
