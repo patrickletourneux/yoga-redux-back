@@ -88,8 +88,6 @@ module.exports = {
      */
   async findOneByPk(req, res) {
     debug('dans findOneByPk');
-    // debug('res.connectedUserId : ', res.connectedUserId);
-    // check if a user exist in dbb for this email, id in req.params.id
     const user = await userDataMapper.findOneByPk(req.params.id);
     if (!user) {
       debug('pas de user trouvé pour cet id');
@@ -108,10 +106,8 @@ module.exports = {
      */
   async deleteOneByPk(req, res) {
     debug('dans deleteOneByPk');
-    // check if a user exist in dbb for this email, id in req.params.id
     const user = await userDataMapper.findOneByPk(req.params.id);
     if (user) {
-      // delete the user in dbb
       const result = await userDataMapper.delete(req.params.id);
       if (result) {
         return res.status(200).json('user supprimmé de la bdd');
@@ -129,11 +125,8 @@ module.exports = {
      */
   async update(req, res) {
     debug('dans update');
-
-    // check if a user exist in dbb for this email, id in req.params.id
     const user = await userDataMapper.findOneByPk(req.params.id);
     if (user) {
-      debug('user à update : ', user);
       if (req.body.password) {
         req.body.password = await bcrypt.hash(req.body.password, 10);
       }
