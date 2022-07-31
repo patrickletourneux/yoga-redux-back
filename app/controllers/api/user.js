@@ -15,7 +15,7 @@ module.exports = {
      */
   async createOne(req, res) {
     debug('dans createOne');
-    debug('req.body.email ', req.body.email);
+    // debug('req.body.email ', req.body.email);
     // look if a user already exits with this email
     const user = await userDataMapper.findOneByEmail(req.body.email);
     if (user) {
@@ -26,7 +26,9 @@ module.exports = {
     // encrypt password with bcrypt
     req.body.password = await bcrypt.hash(req.body.password, 10);
     const newUser = await userDataMapper.insert(req.body);
-    return res.status(200).json({
+    // debug(newUser);
+    return res.status(200)
+    .json({
       user: {
         id: newUser.id,
         email: newUser.email,

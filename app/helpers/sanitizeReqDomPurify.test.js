@@ -32,17 +32,17 @@ describe('isomorphic-dompurify',() => {
 describe('sanitizeRequest',() => {
   test('should be defined ', () => {
     const result = sanitizeRequest('body',{})
-    console.log('result ', result)
+    // console.log('result ', result)
     expect(result).toBe('empty boby');
   });
   test('should be titi ', () => {
     const result = sanitizeRequest('body',{'body' : {user:'titi'}})
-    console.log('result ', result)
+    // console.log('result ', result)
     expect(result).toStrictEqual({'body' : {user:'titi'}});
   });
   test('should be toto ', () => {
     const result = sanitizeRequest('body',{'body' : {user:'<script>tdsklj</script>titi'}})
-    console.log('result ', result)
+    // console.log('result ', result)
     expect(result).toStrictEqual({'body' : {user:'titi'}});
   });
 });
