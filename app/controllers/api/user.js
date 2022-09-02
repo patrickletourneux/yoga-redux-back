@@ -107,7 +107,7 @@ module.exports = {
      * @returns {User} Route API JSON response
      */
   async deleteOneByPk(req, res) {
-    debug('dans deleteOneByPk');
+    debug('dans deleteOneByPk id:',req.params.id);
     const user = await userDataMapper.findOneByPk(req.params.id);
     if (user) {
       const result = await userDataMapper.delete(req.params.id);
