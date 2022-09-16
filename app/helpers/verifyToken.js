@@ -28,6 +28,7 @@ module.exports = {
       debug('ATTENTION test token non actif');
       next();
     } else {
+      debug('no token received in backend');
       throw new ApiError('no token received in backend', { statusCode: 401 });
     }
   },
